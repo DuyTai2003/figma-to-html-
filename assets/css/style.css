@@ -50,6 +50,20 @@ a {
   margin-right: auto;
 }
 
+.line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: var(--line-clamp, 1);
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.line-clamp.line-2 {
+  --line-clamp: 2;
+}
+.break-all {
+  word-break: normal; /* Đặt lại mặc định để không ngắt tùy tiện giữa từ */
+  overflow-wrap: break-word; /* Quan trọng: Chỉ ngắt từ nếu từ đó quá dài và không thể nằm vừa trên một dòng */
+  /* Các thuộc tính CSS khác nếu có */
+}
 /* ===============  header  ================ */
 
 .header {
@@ -305,6 +319,7 @@ a {
 }
 
 .popular .course-item {
+  flex: 1;
   border-radius: 12px;
   border: 1px solid #e2dfda;
   background: #fff;
